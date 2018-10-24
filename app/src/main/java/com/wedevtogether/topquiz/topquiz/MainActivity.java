@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private Button mPlayButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         mGreetingText = (TextView) findViewById(R.id.activity_main_greeting_txt);
         mNameInput = (EditText) findViewById(R.id.activity_main_name_input);
@@ -23,24 +26,30 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton.setEnabled(false);
 
         mNameInput.addTextChangedListener(new TextWatcher() {
-
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mPlayButton.setEnabled(s.toString().length() != 0);
 
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
+            public void afterTextChanged(Editable s) {
 
             }
         });
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        mPlayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // The user clicked
+            }
+        });
+
+
     }
 }
