@@ -24,6 +24,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private QuestionBank mQuestionBank;
     private Question mCurrentQuestion;
 
+    private int mScore;
+
 
 
     @Override
@@ -32,6 +34,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_game);
 
         mQuestionBank = this.generateQuestion();
+
+        mScore = 0;
 
         //wire widget
         mQuestionTextView = (TextView) findViewById(R.id.activity_game_question_text);
