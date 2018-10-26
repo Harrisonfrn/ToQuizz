@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mGreetingText;
     private EditText mNameInput;
     private Button mPlayButton;
+    private Button mLeadButton;
     private User mUser;
     public static final int GAME_ACTIVITY_REQUEST_CODE = 42;
     private SharedPreferences mPreferences;
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         mGreetingText = (TextView) findViewById(R.id.activity_main_greeting_txt);
         mNameInput = (EditText) findViewById(R.id.activity_main_name_input);
         mPlayButton = (Button) findViewById(R.id.activity_main_play_btn);
+
+        mLeadButton = (Button) findViewById(R.id.activity_main_lead_btn);
         
         mPlayButton.setEnabled(false);
         
@@ -94,6 +97,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mLeadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // click
+
+                Intent leadActivityIntent = new Intent(MainActivity.this, LeadActivity.class);
+                startActivity(leadActivityIntent);
+            }
+        });
+
 
 
     }
@@ -104,9 +117,9 @@ public class MainActivity extends AppCompatActivity {
         if (null != firstname) {
             int score = mPreferences.getInt(PREF_KEY_SCORE, 0);
 
-            String fulltext = "Welcome back, " + firstname
-                    + "!\nYour last score was " + score
-                    + ", will you do better this time?";
+            String fulltext = "Bon retour, " + firstname
+                    + "!\nTon dernier score est de  " + score + " pts "
+                    + ", fera tu mieux cette fois ?";
             mGreetingText.setText(fulltext);
             mNameInput.setText(firstname);
             mNameInput.setSelection(firstname.length());
