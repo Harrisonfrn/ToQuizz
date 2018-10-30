@@ -102,8 +102,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         mEnableTouchEvents = false;
 
-        new
-                Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 mEnableTouchEvents = true;
@@ -155,41 +154,91 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private QuestionBank generateQuestions() {
-        Question question1 = new Question("What is the name of the current french president?",
+        Question question1 = new Question("Qui est l'ancien président Français ?",
                 Arrays.asList("François Hollande", "Emmanuel Macron", "Jacques Chirac", "François Mitterand"),
                 1);
 
-        Question question2 = new Question("How many countries are there in the European Union?",
+        Question question2 = new Question("Combien de pays dans l'UE?",
                 Arrays.asList("15", "24", "28", "32"),
                 2);
 
-        Question question3 = new Question("Who is the creator of the Android operating system?",
+        Question question3 = new Question("Qui est le createur d'android?",
                 Arrays.asList("Andy Rubin", "Steve Wozniak", "Jake Wharton", "Paul Smith"),
                 0);
 
-        Question question4 = new Question("When did the first man land on the moon?",
+        Question question4 = new Question("Premier Homme sur la lune ?",
                 Arrays.asList("1958", "1962", "1967", "1969"),
                 3);
 
-        Question question5 = new Question("What is the capital of Romania?",
+        Question question5 = new Question("Quels est la capital de la Roumanie?",
                 Arrays.asList("Bucarest", "Warsaw", "Budapest", "Berlin"),
                 0);
 
-        Question question6 = new Question("Who did the Mona Lisa paint?",
+        Question question6 = new Question("Qui a paint Mona Lisa?",
                 Arrays.asList("Michelangelo", "Leonardo Da Vinci", "Raphael", "Carravagio"),
                 1);
 
-        Question question7 = new Question("In which city is the composer Frédéric Chopin buried?",
+        Question question7 = new Question("Ou est enterré F.Chopin ?",
                 Arrays.asList("Strasbourg", "Warsaw", "Paris", "Moscow"),
                 2);
 
-        Question question8 = new Question("What is the country top-level domain of Belgium?",
+        Question question8 = new Question("Quels est le nom de domaine Belge?",
                 Arrays.asList(".bg", ".bm", ".bl", ".be"),
                 3);
 
-        Question question9 = new Question("What is the house number of The Simpsons?",
+        Question question9 = new Question("Quels est le numéro de maison des Simpson?",
                 Arrays.asList("42", "101", "666", "742"),
                 3);
+
+        Question question10 = new Question("Qui était le dieu de la guerre dans la mythologie grecque ?",
+                Arrays.asList("Hermès", "Arès", "Hadès", "Apollon"),
+        1);
+
+        Question question11 = new Question("Quel est la danse officielle du Brésil ?",
+                Arrays.asList("La samba", "Le tango", "Le chacha", "La valse"),
+                0);
+
+        Question question12 = new Question("Qui est l'actuel président de la France",
+                Arrays.asList("Hollande", "Sarkozy", "Chirac", "Macron"),
+                3);
+
+        Question question13 = new Question("Quel était le nom du petit dragon dans le film Mulan ?",
+                Arrays.asList("Honshu", "Kyushu", "Mushu", "Royco"),
+                2);
+
+        Question question14 = new Question("Quelle est le nom de l'actrice principale d'Alien ?",
+                Arrays.asList("Sigourney Weaver", "Sigourney Beaver", "Sigourney Meaver", "Sigourney Ueaver"),
+                0);
+
+        Question question15 = new Question("Quelle était la profession de Popeye ?",
+                Arrays.asList("Militaire", "Cuisinier", "Marin", "Pêcheur"),
+                2);
+
+        Question question16 = new Question("A quel écrivain doit-on le personnage de Boule-de-Suif ?",
+                Arrays.asList("Charles Baudelaires", "Guy de Maupassant", "Alexandre Dumas", "Albert Camus"),
+                1);
+
+        Question question17 = new Question("De quel pays Tirana est-elle la capitale ?",
+                Arrays.asList("L' Ouzbékistan", "La Biélorussie", "L' Albanie", "Le Kirghistan"),
+                2);
+
+        Question question18 = new Question("De quel groupe Jim Morrison était-il le chanteur ?",
+                Arrays.asList("The Cardigans", "The Beattles", "The Who", "The Doors"),
+                3);
+
+        Question question19 = new Question("Dans quelle ville française se trouve la Cité de l'espace ?",
+                Arrays.asList("Poithier", "Toulouse", "Lyon", "Nantes"),
+                1);
+
+        Question question20 = new Question("En Inde, quels individus \"hors caste\" sont considérés comme impurs ?",
+                Arrays.asList("Les puants", "Les parias", "Les sales", "Les intouchables"),
+                3);
+
+        Question question21 = new Question("Que tient la statue de la Liberté dans sa main droite ?",
+                Arrays.asList("Un livre", "Un sac", "Un flambeau", "Un étendard"),
+                2);
+
+
 
         return new QuestionBank(Arrays.asList(question1,
                 question2,
@@ -199,7 +248,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 question6,
                 question7,
                 question8,
-                question9));
+                question9,
+                question10,
+                question11,
+                question12,
+                question13,
+                question14,
+                question15,
+                question16,
+                question17,
+                question18,
+                question19,
+                question20,
+                question21));
     }
 
     @Override
